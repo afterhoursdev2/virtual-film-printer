@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <CodePage>65001</CodePage>
+    <RootNamespace>VirtualFilmPrinter</RootNamespace>
+    <AssemblyName>VirtualFilmPrinter</AssemblyName>
+    <Product>Virtual Film Printer</Product>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+
+  <!-- The test project lives under tests/; keep its sources and build output out of this project's globs. -->
+  <ItemGroup>
+    <Compile Remove="tests/**" />
+    <None Remove="tests/**" />
+    <EmbeddedResource Remove="tests/**" />
+    <Content Remove="tests/**" />
+  </ItemGroup>
+
+  <!-- XPS reading and rendering (WPF), the zip package, and the spooler's job names (System.Printing). -->
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xaml" />
+  </ItemGroup>
+
+</Project>
